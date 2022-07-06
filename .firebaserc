@@ -1,0 +1,18 @@
+{
+  "targets": {
+    "pryectoweb-7cd02": {
+      "hosting": {
+        "proyecto": [
+          "pryectoweb-7cd02"
+        ]
+      }
+    },
+    "basedatos-8cfe9": {
+      "hosting": {
+        "proyecto": [
+          "basedatos-8cfe9"
+        ]
+      }
+    }
+  }
+}

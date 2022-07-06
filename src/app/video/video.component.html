@@ -1,0 +1,54 @@
+<header>
+    <h1 class="titulo"></h1>
+</header>
+
+<main>
+    <div class="contenedor">
+        <div *ngFor="let detalleVideo of video; first as isFirst">
+
+            <h1 *ngIf="isFirst"
+                class="mb-3 mt-3">{{detalleVideo?.titulo}}</h1>
+
+            <iframe class="iframe-video"
+                    *ngIf="isFirst"
+                    [src]="getVideoIframe(detalleVideo)"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+
+        </div>
+
+        <section class="d-flex flex-wrap">
+            <article class="descripcion">
+                <h2>Descripción</h2>
+                <p>Bienvenido al curso de Angular 11, vas a aprender paso a paso como desarrollar aplicaciones web
+                    front-end con la nueva versión de este framework de Google.</p><br />
+
+                <p>Angular es el framework para JavaScript estándar para crear webs SPA. Es uno de los frameworks más
+                    populares para desarrollar aplicaciones modernas y escalables en el lado del cliente. Si quieres ser
+                    desarrollador front-end o full-stack, o incluso si ya te dedicas al desarrollo web, es casi
+                    obligatorio aprender Angular.
+                    Angular ha dado un salto de calidad con respecto a la versiones anteriores del framework, como
+                    AngularJS. Ahora utilizaremos TypeScript para definir nuestras clases, propiedades y métodos, el
+                    código es mucho más limpio y se ha mejorado el funcionamiento general del framework.</p>
+            </article>
+
+            <div class="scroll mt-4 mb-4 ms-auto contenido">
+                <div class="text-center p-2"
+                     *ngFor="let detalleVideo of video">
+
+
+                    <iframe class="iframe-video2"
+                            [src]="getVideoIframe(detalleVideo)"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    <h5 class="mb-4">{{detalleVideo?.titulo}}</h5>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</main>

@@ -1,0 +1,57 @@
+<div [ngStyle]="setMyStyle()">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <!-- <i class="far fa-gem"></i> -->
+                <h4>INICIAR SESIÓN</h4>
+            </div>
+
+            <!-- Login Form -->
+            <form [formGroup]="loginForm"
+                  (ngSubmit)="onLogin()">
+
+                <input type="email"
+                       id="email"
+                       class="fadeIn second"
+                       name="email"
+                       placeholder="Correo Electrónico"
+                       formControlName="email">
+                <p class="alert alert-danger mx-auto"
+                   *ngIf="!email.valid && email.touched">Ingresa un correo electrónico valido</p>
+                <input type="password"
+                       id="password"
+                       class="fadeIn third"
+                       name="password"
+                       placeholder="Contraseña"
+                       formControlName="password">
+                <p class="alert alert-danger mx-auto"
+                   *ngIf="!password.valid && password.touched">Ingresa una contraseña de minimo 6 caracteres</p>
+                <ngx-recaptcha2 #captchaElem
+                                [siteKey]="siteKey"
+                                formControlName="recaptcha"
+                                class="captcha me-auto ms-auto">
+                </ngx-recaptcha2>
+
+                <input type="submit"
+                       class="fadeIn fourth"
+                       value="Ingresar"
+                       [disabled]="loginForm.invalid">
+            </form>
+
+            <p>¿Aún no tienes una cuenta?</p>
+            <!-- <input type="submit" class="fadeIn fourth" value="REGISTRARSE"> -->
+            <a [routerLink]="['/register']">REGISTRARSE</a>
+            <!-- <a href="register">REGISTRARSE</a> -->
+
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover"
+                   href="#">¿Olvidaste tu contraseña?</a>
+            </div>
+
+        </div>
+    </div>
+</div>

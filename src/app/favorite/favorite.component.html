@@ -1,0 +1,19 @@
+<!-- <app-header></app-header> -->
+<h2 class="text-center">Lista de Favoritos</h2>
+<div class="mt-2 mb-4 row-cols-md-1"
+     *ngFor="let favorito of listaFavoritos">
+    <div class="col product-item">
+        <div class="card h-100">
+            <img [src]="favorito?.data?.foto"
+                 class="card-img-top"
+                 [attr.alt]="favorito?.data?.alt">
+            <div class="card-body">
+                <h5 class="card-title">{{favorito?.data?.title}}</h5>
+                <p class="card-text">{{favorito?.data?.descripcion}}</p>
+                <a href="#"
+                   class="card-link">Ver curso</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- <app-footer></app-footer> -->

@@ -1,0 +1,48 @@
+<div [ngStyle]="setMyStyle()">
+       <div class="wrapper fadeInDown">
+              <div id="formContent">
+                     <!-- Tabs Titles -->
+
+                     <!-- Icon -->
+                     <div class="fadeIn first">
+                            <!-- <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" /> -->
+                            <H4>REGISTRARSE</H4>
+                     </div>
+
+                     <!-- Login Form -->
+                     <form [formGroup]="registerForm"
+                           (ngSubmit)="onRegister()">
+                            <input type="email"
+                                   id="email"
+                                   class="fadeIn second"
+                                   name="email"
+                                   placeholder="Correo Electrónico"
+                                   formControlName="email">
+                            <p class=" alert alert-danger mx-auto"
+                               *ngIf="!email.valid && email.touched">Ingresa un correo electrónico valido</p>
+                            <input type="password"
+                                   id="password"
+                                   class="fadeIn third"
+                                   name="password"
+                                   placeholder="Contraseña"
+                                   formControlName="password">
+                            <p class="alert alert-danger mx-auto"
+                               *ngIf="!password.valid && password.touched">Ingresa una contraseña de minimo 6 caracteres
+                            </p>
+                            <ngx-recaptcha2 #captchaElem
+                                            [siteKey]="siteKey"
+                                            formControlName="recaptcha"
+                                            class="captcha me-auto ms-auto">
+                            </ngx-recaptcha2>
+                            <input type="submit"
+                                   class="fadeIn fourth"
+                                   value="REGISTRAR"
+                                   [disabled]="registerForm.invalid">
+                     </form>
+
+                     <p>Ya tienes tu cuenta</p>
+                     <a href="login">loguearse</a>
+
+              </div>
+       </div>
+</div>

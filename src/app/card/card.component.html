@@ -1,0 +1,23 @@
+<!-- CARDS -->
+<!-- <div class="row row-cols-1 row-cols-md-3 g-4 mt-1 mb-1"> -->
+<div class="mt-2 mb-4 row-cols-md-1">
+    <!-- cursos -->
+    <div class="col product-item "
+         [attr.category]="dataEntrante?.category">
+        <div class="card h-100">
+            <img [src]="dataEntrante?.foto"
+                 class="card-img-top"
+                 [attr.alt]="dataEntrante?.alt">
+            <div class="card-body">
+                <h5 class="card-title">{{dataEntrante?.title}}</h5>
+                <p class="card-text">{{dataEntrante?.descripcion}}</p>
+                <a [attr.href]="dataEntrante?.link"
+                   class="card-link">Ver curso</a>
+                <a href="#"
+                   class="card-link"><i class="fas fa-heart text-danger"
+                       title="añadir a favoritos"
+                       (click)="agregarFavorito()"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
